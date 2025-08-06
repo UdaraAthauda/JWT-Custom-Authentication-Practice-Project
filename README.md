@@ -4,6 +4,7 @@ This project demonstrates a complete implementation of custom JWT-based authenti
 
 
 🚀 Features
+
 User registration and login
 
 JWT token generation (access & refresh)
@@ -24,6 +25,7 @@ Error handling and token expiration flow
 
 
 🛠️ Tech Stack
+
 Backend: Django, Django REST Framework, Simple JWT
 
 Frontend: React, React Router, Axios, Chakra UI (or MUI if used)
@@ -32,6 +34,7 @@ Authentication: Custom JWT logic with cookie-based storage and refresh strategy
 
 
 ✅ Practice Goals
+
 Understand how JWT tokens are issued, verified, and refreshed
 
 Learn how to protect API endpoints and frontend routes
