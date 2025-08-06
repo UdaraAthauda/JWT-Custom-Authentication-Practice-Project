@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { VStack, Field, Input, Button } from "@chakra-ui/react"
 import { useAuth } from '../contexts/useAuth'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     
@@ -28,6 +29,7 @@ const Login = () => {
             </Field.Root>
 
             <Button onClick={handleLogin}>Login</Button>
+            <Link to="/register">don't have an account? register!</Link>
         </VStack>
     </>
   )

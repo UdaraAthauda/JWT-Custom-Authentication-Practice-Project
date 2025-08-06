@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { is_authenticated } from "../endpoints/api";
 import { useLocation, useNavigate } from "react-router-dom";
-import { login } from "../endpoints/api";
+import { login, register } from "../endpoints/api";
 
 const AuthContext = createContext()
 
@@ -30,12 +30,26 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    const register_user = async (username, email, password, cPassword) => {
+        if (password === cPassword) {
+            try{
+                await register(username, email, password)
+                alert('successfully registered user')
+                navigate('/login')
+            } catch(error) {
+                alert('error registering user')
+            }
+        } else {
+            alert('passwords dont match')
+        }
+    }
+
     useEffect(() => {
         get_authenticated()
     }, [location.pathname])
 
     return (
-        <AuthContext.Provider value={{isAuthenticated, loading, login_user}}>
+        <AuthContext.Provider value={{isAuthenticated, loading, login_user, register_user}}>
             {children}
         </AuthContext.Provider>
     )
